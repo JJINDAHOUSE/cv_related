@@ -28,7 +28,7 @@ class GatewayService:
         pass
 
     @http(
-            "POST", "/counters",
+            "POST", "/counters/<string:source_address>",
             expected_exceptions = (ValidationError, BadRequest)
     )
     def create_counter(self):
